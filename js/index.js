@@ -2,7 +2,11 @@
 
 // Your code goes here
 
- 
+document.querySelector('a').addEventListener('click', clickEventHandler)
+function clickEventHandler(event) {
+  console.log(event.type + '!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+  console.log(event.target);
+}
   
 //   document.querySelector('nav').addEventListener('click', clickEventHandler)
 //   document.querySelector('header').addEventListener('click', clickEventHandler)
@@ -45,13 +49,15 @@ pageImg.addEventListener("mouseleave", (event) => {
 });
 
 
-document.querySelector('a').addEventListener('click', clickEventHandler)
-function clickEventHandler(event) {
-  console.log(event.type + '!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-  console.log(event.target);
-}
 const h2Color = document.querySelector('h2');
 h2Color.addEventListener('click',(event) => {
-	event.target.style.color = 'red';
+	console.log(event.target.style.color = 'red');
 	
-})
+});
+
+const buttons = document.querySelectorAll(".btn");
+Array.from(buttons).forEach((banana) => {
+banana.addEventListener('click', (event) => {
+	event.target.style.color = 'orange';
+	});
+});
